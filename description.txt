@@ -1,0 +1,16 @@
+This is an IoT-based public trash service manager; it is composed by five elements:
+
+Android app: it permitts to a consumerto get the token to do a deposits of trash and to select the type of the trash (A,B,C: in real life it can be paper, plastic, can);
+Arduino board: it receive information from the Android app about the material.
+ESP SoC: it detect the wqeight on the end of deposits to send to the server.
+Server: it has to response to the message from the other four element and it save each deposits on a mysql database.
+Web Dashboard: it permitts to an a remote operator to check te entire trash service, turn off and turn on the service in case of problem or maintenance, he receive each n seconds
+data about the weight and material and it can get from database the statistics about the last n days.
+
+Communication:
+ESP --- server: HTTP;
+server --- dashboard: HTTP;
+arduino --- app: bluetooth;
+app --- servide: HTTP;
+
+The server is made thanks to a ngrok tunnelling.
