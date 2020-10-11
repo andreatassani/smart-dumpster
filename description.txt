@@ -1,11 +1,10 @@
 This is an IoT-based public trash service manager; it is composed by five elements:
 
-Android app: it permitts to a consumerto get the token to do a deposits of trash and to select the type of the trash (A,B,C: in real life it can be paper, plastic, can);
-Arduino board: it receive information from the Android app about the material.
-ESP SoC: it detect the wqeight on the end of deposits to send to the server.
-Server: it has to response to the message from the other four element and it save each deposits on a mysql database.
-Web Dashboard: it permitts to an a remote operator to check te entire trash service, turn off and turn on the service in case of problem or maintenance, he receive each n seconds
-data about the weight and material and it can get from database the statistics about the last n days.
+Android app: it permitts to a consumer to get the token to do a deposits of trash and he select the type of the trash (A,B,C: in real life it can be paper, plastic, can);
+Arduino board: it receive information from the Android app about the material (in real life it is the front end of the trash service).
+ESP SoC: it detect the weight on the end of deposits to send to the server (in real life it is the backend of the trash service).
+Server: it response to the request from the other four element and it save each deposits on a mysql database.
+Web dashboard: it permitts to an a remote operator to check te entire trash service, turn off and turn on the service in case of problem or maintenance, he receive each n seconds data about the weight and material and it can get from database the statistics about the last n days (in real life represets what the operator see in his monitor from the headquarters).
 
 Communication:
 ESP --- server: HTTP;
@@ -14,3 +13,10 @@ arduino --- app: bluetooth;
 app --- servide: HTTP;
 
 The server is made thanks to a ngrok tunnelling.
+
+Tools:
+ESP: c++, arduino-ide;
+app: java, android studio;
+arduino: c++, arduino-ide;
+server: java, mysql, eclipse, xampp, ngrok;
+dashboard: html, css, js;
